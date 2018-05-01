@@ -1,48 +1,22 @@
 body {
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 0;
+    background: #999;
 }
 
-#page {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 2px auto;
-  padding: 0px;
+#page:after {
+    color:white;
+    content: "Wide Layout";
 }
 
-.main {
-  flex: 1 100%;
-  border: 1px solid #999;
-  padding: 2px;
-  margin: 1px;
-  background: #eee;
+#mainNav {
+    flex: 0 auto;
 }
 
-#mainHeader, #mainNav, #mainFooter {
-  text-align: center;
+#mainNav a {
+    display: block;
+    text-align: left;
 }
 
-#mainHeader h1 { margin: 8px;}
-#mainNav a { margin: 0px 5px;}
 #mainSection {
-  padding: 20px;
-  text-align: left;
-}
-
-a {
-  color: #00B7FF;
-}
-
-.wideRow {
-  display: flex;
-  flex-flow: row wrap;
-  align-content: stretch;
-}
-.wideRow .itemNarrow {
-  flex: 0 auto;
-  margin: 0px 5px;
-}
-.wideRow .itemWide {
-  flex: 1 auto;
-  margin: 0px 5px;
+    flex: 1;
+    overflow: auto;
 }
