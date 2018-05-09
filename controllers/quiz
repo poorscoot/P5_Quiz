@@ -55,9 +55,10 @@ exports.edit = (req, res, next) => {
 // PUT /quizzes/:quizId
 exports.update = (req, res, next) => {
 	const {quiz, body} = req;
+	quiz.question=body.question;
 	quiz.answer = body.answer;
 	quiz.save({fields: ["question", "answer"]})
-	.then(quiz => res.redirect('/quizzes' + quiz.id))
+	.then(quiz => res.redirect('/quizzes/' + quiz.id))
 	.catch(Sequelize.ValidationError, error => {
 		console.log('There are errors in the form: ');
 		error.errors.forEach(({message}) => console.log(message));
